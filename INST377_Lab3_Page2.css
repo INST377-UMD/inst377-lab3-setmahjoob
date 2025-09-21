@@ -1,0 +1,145 @@
+/* Body must use a custom font-family (allowed to choose any) */
+:root{
+  --bg: #f7f9fc;
+  --ink: #14171a;
+  --accent: #4c7cf3;
+  --banner-bg: #111827;   /* header/footer background (different from page) */
+  --banner-ink: #ffffff;
+  --sidebar-bg: #f0f6ff;  /* sidebar base color (different from rest) */
+  --sidebar-bg-hover: #e3eeff;
+  --card: #ffffff;
+  --line: #e5e7eb;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* Header + Footer share same class (required), centered text, margin + padding */
+.banner{
+  background: var(--banner-bg);
+  color: var(--banner-ink);
+  text-align: center;               /* centered text (required) */
+  padding: 20px 16px;               /* padding (required) */
+  margin: 16px 0;                   /* margin (required) */
+  border-radius: 12px;
+}
+.banner h1{
+  margin: 0;
+  font-weight: 800;
+}
+
+/* Nav with 3 items horizontally, no bullets, hover state */
+.top-nav{
+  max-width: 1100px;
+  margin: 0 auto 16px auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 8px 12px;
+}
+.top-nav ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;                 /* no bullets (required) */
+  display: flex;                    /* horizontal (required) */
+  gap: 16px;
+  justify-content: center;
+}
+.top-nav a{
+  display: inline-block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: var(--ink);
+  border-radius: 8px;
+  transition: transform .15s ease, background-color .15s ease;
+}
+.top-nav a:hover{
+  background: #eef2ff;              /* hover state (required) */
+  transform: translateY(-1px);
+}
+
+/* Two-column layout: same line, percentage widths, with margin + padding */
+.content{
+  max-width: 1100px;
+  margin: 16px auto;
+  display: flex;                    /* keeps main + sidebar on one line (required) */
+  gap: 16px;
+  align-items: stretch;
+}
+.main{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;                    /* padding (required) */
+  margin: 0;                        /* margin (required; 0 is valid) */
+  width: 68%;                       /* percentage width (required) */
+}
+.sidebar{
+  background: var(--sidebar-bg);    /* different color than rest (required) */
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;                    /* padding (required) */
+  margin: 0;                        /* margin (required; 0 is valid) */
+  width: 30%;                       /* percentage width (required) */
+  transition: background-color .2s ease;
+}
+.sidebar:hover{
+  background: var(--sidebar-bg-hover); /* hover color change (required) */
+}
+.sidebar h2{
+  margin-top: 0;
+}
+
+/* Form: required name, select with R/P/S, name expands on focus, then back */
+.rps-form{
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+.form-row{
+  display: grid;
+  gap: 6px;
+}
+label{
+  font-weight: 600;
+}
+input[type="text"],
+select{
+  width: 60%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  transition: width .2s ease;       /* smooth expand on focus */
+  background: #fff;
+}
+input[type="text"]:focus{
+  outline: 2px solid #c7d2fe;
+  width: 80%;                       /* expands on focus (required) */
+}
+button{
+  width: fit-content;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover{
+  filter: brightness(1.05);
+}
+
+.notes{
+  margin-top: 16px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--line);
+}
