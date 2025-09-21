@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>INST377 • Lab 3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Custom font (any is fine per assignment) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- External CSS (required) -->
+  <link rel="stylesheet" href="INST377_Lab3_Page2.css" />
+</head>
+<body>
+  <!-- Header + Footer share the SAME class 'banner' (required) -->
+  <header class="banner">
+    <h1>Rock • Paper • Scissors</h1>
+  </header>
+
+  <!-- Simple nav with 3 items, horizontal, no bullets, hover state, real links -->
+  <nav class="top-nav">
+    <ul>
+      <li><a href="https://www.umd.edu" target="_blank" rel="noopener">UMD</a></li>
+      <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN</a></li>
+      <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener">W3Schools</a></li>
+    </ul>
+  </nav>
+
+  <!-- Two-column body: main + sidebar on the same line, percentage widths -->
+  <div class="content">
+    <main class="main">
+      <h2>Play a Round</h2>
+      <p>Enter your name and pick your move.</p>
+
+      <!-- Form inside Main Content (required) -->
+      <form class="rps-form" action="#" method="get">
+        <div class="form-row">
+          <label for="playerName">Name</label>
+          <!-- required + expands on focus -->
+          <input id="playerName" name="playerName" type="text" required placeholder="Your name" />
+        </div>
+
+        <div class="form-row">
+          <label for="move">Your Move</label>
+          <select id="move" name="move">
+            <option>Rock</option>
+            <option>Paper</option>
+            <option>Scissors</option>
+          </select>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <section class="notes">
+        <h3>About the Game</h3>
+        <p>Rock beats Scissors • Scissors beats Paper • Paper beats Rock.</p>
+      </section>
+    </main>
+
+    <!-- Sidebar (different color, has rules, changes color on hover) -->
+    <aside class="sidebar">
+      <h2>How to Play</h2>
+      <ol>
+        <li>Both players choose at the same time.</li>
+        <li>Rock beats Scissors.</li>
+        <li>Scissors beats Paper.</li>
+        <li>Paper beats Rock.</li>
+        <li>Same choice = tie. Pick again.</li>
+      </ol>
+      <p class="tip">Hover over this sidebar to see the background change.</p>
+    </aside>
+  </div>
+
+  <footer class="banner">
+    <p>© 2025 • INST377 Lab 3</p>
+  </footer>
+</body>
+</html>
